@@ -1,0 +1,48 @@
+
+.form-container {
+  padding: 52px;
+  border-radius: 25px !important;
+}
+
+::ng-deep .custom-dialog-container {
+  border-radius: 20px !important;
+}
+
+.popup-header {
+  font-family: inter;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0 !important;
+  color: #000000;;
+  margin: 0 !important;
+}
+
+.dilog-popup {
+  padding: 0px !important;
+}
+
+.popup-label {
+  width: 100%;
+  font-size: 16px;
+  margin: 8px 0 0;
+}
+
+.btn-grid {
+  margin-top:10px;
+
+  .btn {
+    text-align: right;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 2px 20px;
+    height: 40px;
+    width: 136px;
+    border-radius: 57px;
+
+    &.btn-submit {
+      color: #FFFFFF;
+      background: #5056ED;;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+body{
+  padding: 0;
+  margin: 0;
+  font-family: Inter;
+  font-size: 16px;
+  color:rgba(0, 0, 0, 0.9);
+  background: #F2F6F8;
+}
+
+.heading{
+  font-size: 20px;
+}
+
+.primary-color{
+  color:#F2F6F8
+}
+
+.warn-color{
+  color:#ED5050
+}
+
+.custom-container .mat-dialog-container {
+  border-radius: 25px !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface{
+  border-radius: 25px !important;
+}

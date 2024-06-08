@@ -1,0 +1,86 @@
+.main-container{
+  width: 100%;
+  margin-bottom:330px;
+  .main-task-container{
+    width: 1000px;
+    margin: auto;
+    height: calc(100vh - 126px);
+    .task-container{
+      margin-top: 30px;
+      background: #FFFFFF;
+      border-radius: 25px;
+      box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.1);
+      padding: 24px;
+
+      .task-heading{
+        display: flex;
+        .text-box{
+          flex: 0 0 60%;
+          .heading{
+            font-size: 20px;
+            font-weight: 500;
+          }
+        }
+        .timmer-box{
+          text-align: right;
+          flex: 0 0 40%;
+          .timer-text{
+            font-size: 20px;
+            font-weight: 500;
+            float: left;
+            padding-left: 5px;
+            border-left: 2px solid gray;
+            color: #5056ED;;
+          }
+
+          .button{
+            margin-top: 5px;
+            margin-right: 5px;
+            color: #fff;
+            width: 136px;
+            height: 40px;
+            border-radius: 57px;
+            font-family: inter;
+            font-weight: 500;
+            font-size: 16px;
+          }
+          .delete-button{
+            width: 20px;
+            color: black;
+            background: #D9D9D9;
+          }
+          .start-button{
+            background:#5056ED;;
+          }
+          .stop-button{
+            background: #ED5050;
+          }
+        }
+      }
+      .task-heading>div {
+        flex: 50% 1;
+      }
+    }
+    .task-container:last-child{
+      margin-bottom: 60px;
+    }
+  }
+
+  .nav-bar {
+    width: 1000px;
+    background: #F2F6F8;
+    margin-left: calc((100vw - 1022px)/2);
+    position: fixed;
+    height: 50px;
+  }
+  .example-spacer {
+    flex: 1 auto;
+  }
+  .mat-toolbar-row,.mat-toolbar-single-row {
+    padding: 0;
+  }
+}
+
+::ng-deep .custom-dialog-container {
+  border-radius: 20px !important;
+}

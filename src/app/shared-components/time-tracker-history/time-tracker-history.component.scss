@@ -1,0 +1,36 @@
+.task-history-container{
+
+  .heading{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .history-container{
+    max-height: 200px;
+    overflow: auto;
+
+    .active-timer{
+      color: green;
+      margin-top: 2px;
+    }
+  }
+  .history-container::-webkit-scrollbar{
+    width: 8px;
+  }
+
+  .history-container::-webkit-scrollbar-track {
+    background-color: gray;
+  }
+
+  .history-container::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #ccc;
+  }
+
+  .history{
+    float: left;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
+}

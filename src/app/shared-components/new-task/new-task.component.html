@@ -1,0 +1,18 @@
+<div class="form-container">
+  <span class="popup-header">Enter New Task Name</span>
+  <div mat-dialog-content class="dilog-popup">
+    <form [formGroup]="taskForm" (ngSubmit)="submit(taskForm.value)">
+      <mat-form-field class="popup-label" appearance="outline">
+        <mat-label>Task Name</mat-label>
+        <input (keyup)="validateTaskName($event)" matInput placeholder="Your task name" formControlName="taskName"
+          required />
+        <mat-hint *ngIf="isTaskNameErr">Please enter a valid value</mat-hint>
+      </mat-form-field>
+    </form>
+  </div>
+  <div class="btn-grid">
+    <button mat-raised-button class="btn btn-submit" (click)="submit(taskForm.value)">
+      Save
+    </button>
+  </div>
+</div>

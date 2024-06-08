@@ -1,0 +1,26 @@
+.example-spacer {
+  flex: 1 auto;
+}
+
+.main-nav-bar{
+  background: #FFFFFF;
+  .nav-bar {
+      width: 1000px;
+      background: #FFFFFF;
+      height: 60px;
+      margin: auto;
+
+      .total-time{
+        font-family: Ubuntu;
+        font-size: 16px;
+        font-weight: 400;
+        color: #000000BF;
+      }
+      // .total-hour{
+      //   font-weight: 500;
+      // }
+    }
+    .mat-toolbar-row,.mat-toolbar-single-row{
+      padding: 0;
+    }
+}

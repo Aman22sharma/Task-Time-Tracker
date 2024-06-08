@@ -1,0 +1,30 @@
+<div class="main-container">
+  <app-navigation-bar></app-navigation-bar>
+  <div class="main-task-container">
+    <div class="task-container" *ngFor="let task of taskService.taskList">
+      <div class="task-heading">
+        <div class="text-box">
+          <p class="heading">{{ task.taskName }}</p>
+          <app-time-tracker-history [logHistory]="task.loggedHistory"></app-time-tracker-history>
+        </div>
+        <div class="timmer-box">
+          <p class="timer-text">{{formatTime(task?.hour)}}:{{formatTime(task?.minute)}}:{{formatTime(task?.secand)}}
+          </p>
+          <button *ngIf="task.isStartedTimer" mat-raised-button class="button start-button"
+            (click)="startTask(task.id)">Start</button>
+          <button *ngIf="!task.isStartedTimer" mat-raised-button class="button stop-button"
+            (click)="stopTask(task.id)">Stop</button>
+          <button mat-raised-button class="button delete-button" (click)="deleteTask(task.id)">X</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-toolbar class="nav-bar">
+    <span class="example-spacer"></span>
+    <button style="background: #5056ED;color: #fff;" (click)="addTask()" mat-fab
+      aria-label="Example icon button with a delete icon" matTooltip="Create New Task">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-toolbar>
+</div>

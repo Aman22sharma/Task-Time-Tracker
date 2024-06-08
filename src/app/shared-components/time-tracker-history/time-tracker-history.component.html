@@ -1,0 +1,13 @@
+<div class="task-history-container">
+  <p class="heading">History</p>
+  <p *ngIf="logHistory.length == 0">No History Found, Click on the start button to track the timer</p>
+  <div class="history-container">
+    <ng-container *ngFor="let entry of logHistory">
+      <p class="history">{{entry}}</p>
+      <span *ngIf="entry.includes('Active')">
+        <mat-icon class="active-timer">radio_button_checked</mat-icon>
+      </span>
+    </ng-container>
+  </div>
+
+</div>
