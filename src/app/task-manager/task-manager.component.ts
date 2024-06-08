@@ -29,6 +29,15 @@ export class TaskManagerComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.taskService.getIsUpdateLocalStorage().subscribe(
+      (isUpdate) => {
+        if (isUpdate) {
+          console.log('Update tasklist')
+          let taskListTmp = JSON.stringify(this.taskService.taskList);
+          localStorage.setItem('data', taskListTmp)
+        }
+      }
+    )
     window.addEventListener('beforeunload', this.localStorage.saveDataToLocalStorage.bind(this));
   }
 

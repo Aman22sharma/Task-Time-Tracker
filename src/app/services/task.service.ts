@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  // public isUpdateStorage: BehaviorSubject<boolean> = new BehaviorSubject(false);
+  public isUpdateStorage: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   hours: number = 0;
   minutes: number = 0;
@@ -14,6 +15,14 @@ export class TaskService {
   taskList: any = [];
 
   constructor() { }
+
+  isUpdateLocalStorage(params: boolean) {
+    this.isUpdateStorage.next(params)
+  }
+
+  getIsUpdateLocalStorage(): Observable<boolean> {
+    return this.isUpdateStorage.asObservable();
+  }
 
   //Generating unique id for each created task
   generateRandomId(size: any) {
@@ -52,6 +61,7 @@ export class TaskService {
       loggedHistory: []
     };
     this.taskList.unshift(timeObj)
+    this.isUpdateLocalStorage(true)
   }
 
   deleteTask(id: number): void {
@@ -60,6 +70,7 @@ export class TaskService {
       // Use splice to remove the object at the found index
       this.taskList.splice(indexToDelete, 1);
     }
+    this.isUpdateLocalStorage(true)
   }
 
   startTask(id: number): void {
@@ -79,6 +90,7 @@ export class TaskService {
         }
       }
     }, 1000);
+    this.isUpdateLocalStorage(true)
   }
 
   getTotalTimeSpent(): number {
@@ -94,6 +106,7 @@ export class TaskService {
     task.loggedHistory.shift()
     task.loggedHistory.unshift(preMsg)
     clearInterval(task.timer);
+    this.isUpdateLocalStorage(true)
   }
 
   formateTimestamp(inputUTC: any) {
