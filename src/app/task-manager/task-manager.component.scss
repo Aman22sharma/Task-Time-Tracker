@@ -1,6 +1,5 @@
 .main-container{
   width: 100%;
-  margin-bottom:330px;
   .main-task-container{
     width: 1000px;
     margin: auto;
@@ -71,7 +70,7 @@
     background: #F2F6F8;
     margin-left: calc((100vw - 1022px)/2);
     position: fixed;
-    height: 50px;
+    height: 0;
   }
   .example-spacer {
     flex: 1 auto;

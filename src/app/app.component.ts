@@ -13,6 +13,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.localStorage.getTaskListFromStorage()
-    window.addEventListener('beforeunload', this.localStorage.saveDataToLocalStorage.bind(this));
   }
 }

@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TaskService } from '../services/task.service';
 import { NewTaskComponent } from '../shared-components/new-task/new-task.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { StorageService } from '../services/storage.service';
 
 @Component({
   selector: 'app-task-manager',
@@ -17,7 +18,8 @@ export class TaskManagerComponent implements OnInit, OnDestroy {
   constructor(private _fb: FormBuilder,
     public taskService: TaskService,
     private dialog: MatDialog,
-    private _snackBar: MatSnackBar) { }
+    private _snackBar: MatSnackBar,
+    private localStorage: StorageService) { }
 
   //snackbar compenet to show messages
   openSnackBar(message: string) {
@@ -26,7 +28,9 @@ export class TaskManagerComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    window.addEventListener('beforeunload', this.localStorage.saveDataToLocalStorage.bind(this));
+  }
 
   addTask(): void {
     const dialogRef = this.dialog.open(NewTaskComponent, {

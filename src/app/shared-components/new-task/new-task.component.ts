@@ -24,7 +24,6 @@ export class NewTaskComponent implements OnInit {
   }
 
   validateTaskName(e: any) {
-    console.log(e.target.value)
     this.isTaskNameErr = true;
     let value = e.target.value;
     if (value !== "") {
