@@ -1,3 +1,6 @@
+#### You can add tasks and you can start the timer to track your time how much time you have spent on a particular task to complete.
+![Image](https://github.com/user-attachments/assets/da31b0bc-6d04-4745-a438-2aa0a1eaf8ff)
+
 # TaskTimeTracker
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
